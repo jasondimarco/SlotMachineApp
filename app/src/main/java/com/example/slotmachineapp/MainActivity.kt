@@ -187,11 +187,12 @@ fun Slots(modifier: Modifier = Modifier) {
                 Slider(
                     value = speed,
                     onValueChange = { speed = it },
-                    valueRange = 1f..2000f,
+                    valueRange = 10f..200f,
                     modifier = Modifier.padding(horizontal = 80.dp)
                 )
+                val markiplier = (((200 - speed.toFloat())/10)/2) + 1
                 Text(
-                    text = "Speed: ${speed.toInt()}"
+                    text = "${"%.1f".format(markiplier)}x Multiplier"
                 )
             }
             if (isCounting < 3) {
